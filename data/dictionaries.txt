@@ -1,0 +1,265 @@
+Acceleration	Day nhanh tien do
+Action	Tac dong
+Actual	Thuc te
+Air	Khong khi
+Apple	Qua tao
+Aback	Lui lai
+Abacus	Dinh cot
+Abaft	O dang sau
+Abalone	Bao ngu
+Abandon	Su buong tha
+Abandoned	Vang mat
+Abase	Lam nhuc
+Abate	Lam diu di
+Attack	Tan cong
+Advice 	Loi khuyen
+Attend	Co mat
+Attitude	Thai do
+Ball	Qua bong
+Balloon	Bong bay
+Borrow	Muon
+Born	Sinh ra
+Bear	Con gau
+Boot	Doi ung
+Book	Quyen sach
+Bone	Xuong
+Busy	Ban ron
+Bush	Bui ram
+Bus	Xe buyt
+Butter	Bo
+Bird	Chim
+Blame	Do loi
+Blank	Khoang trong
+Blanket	Cai chan
+Blaze	Ngon lua
+Blood	Mau
+Computer	May tinh
+Calculate	Tinh toan
+Cancel	Huy
+Cut	Cat
+Compulsory	Bat buoc
+Concern	Lien quan
+Cause	Nguyen nhan
+Chicken	Con ga
+Cancer	Ung thu
+Condition	Dieu kien
+Condiment	Do gia vi
+Condor	Ken ken
+Confirm	Xac nhan
+Conflict	Xung dot
+Condom	Bao cao su
+Conic	Hinh non
+Dad	Cha
+Dunk	Up ro
+Dentist	Nha si
+Day	Ngay
+Dog	Con cho
+Daily	Hang ngay
+Damage	Thiet hai
+Dance	Nhay
+Driver	Tai xe
+Drive	Lai xe
+Double	Gap doi
+Dark	Toi
+Down	Xuong
+Done	Hoan thanh
+Death	Cai chet
+Diamond	Kim cuong
+Disprove	Bac bo
+Disappointed	That vong
+Diposal	Su sap dat
+Egg	Qua trung
+Eighty	Tam muoi
+Egypt	Ai cap
+Empty	Trong rong
+Electric	Dien
+Element	Phan tu
+Eject	Tu choi
+Elf	Yeu tinh
+Ember	Than
+Emergency	Khan cap
+Employee	Cong nhan
+Employer	Chu
+Encode	Ghi mat ma
+End	Ket thuc
+Enemy	Ke thu
+Energy	Nang luong
+Enjoy	Tan huong
+Final	Cuoi cung
+Fifty	Nam muoi
+Filter	Loc
+Fill	Dien
+Finance	Tai chinh
+Find	Tim kiem
+Fine	On
+Finger	Ngon tay
+Finish	Hoan thanh
+Fire	Lua
+First	Dau tien
+Fish	Ca
+Form	Mau
+Farm	Nong trai
+Fort	Quan su
+Forum 	Dien dan
+Forward	Tien dao
+Fossil 	Hoa thach
+Fight	Chien dau
+Gift	Mon qua
+Game	Tro choi
+General	Chung
+Gene	Gen
+Goose	Ngong
+Gear	Thiet bi
+Guest	Doan
+Gym	The duc
+Hello	Xin chao
+Hi	Xin chao
+Half	Mot nua
+Hack	Gian lan
+Have	Co
+Hair	Toc
+Hand	Tay
+Hug	Om
+Hairbrush	Luoc
+Head	Dau
+Internet	Mang
+Ice	Bang
+Income	Thu nhap
+Idea	Y tuong
+Identify	Nhan dang
+If	Neu nhu
+Ignore	Phot lo
+Ill	Om
+Imposter	Ke gian diep
+I	toi
+Index	Con tro
+Increase	Gia tang
+Incredible 	Khong the tin duoc
+Interesting	Thu vi
+Interested	Thu vi
+Japan	Nhat ban
+Jungle	Khu rung
+Jacket	Ao khoac
+Jazz	Nhac jazz
+Jewel	Chau bau
+Job	Cong viec
+Jog	Di bo
+Journey	Cuoc hanh trinh
+Joystick	Tay can
+Judgment	Su phan xet
+Juicy	Mong nuoc
+Kill	Giet
+Kick	Da
+Knee	Dau goi
+Knift	Con dao
+Knock	Danh guc
+Know	Biet
+Knowledge	Su hieu biet
+Label	Phong chu
+Large	Lon
+Look	Nhin
+Like	Thich
+Love 	Yeu
+Lab	Phong thi nghiem
+Lip	Moi
+Lady	Quy co
+Lie	Noi doi
+Land	Vung dat
+Lonely	Co don
+Market	Cho
+Moon	Mat trang
+Man	Nguoi dan ong
+Muscle	Co bap
+Miss	Truot
+Mad	Tuc gian
+Mine	Cua toi
+Max	Lon nhat
+Maybe	Co the
+Mean	Y nghia
+Mechanic	Tho may
+No	Khong
+Nuckle 	Nam dam
+Number	Con so
+Note	Danh dau
+Notice	Tap trung
+Nurse	Y ta
+Nut	Hat de
+Object	Doi tuong
+Observant	Tinh mat
+Ocean	Dai duong
+October	Thang muoi
+Odd	So le
+Old	Gia
+On	Len
+Offer	Dat hang
+Office	Co quan
+Person	Con nguoi
+Private	Bi mat
+Public	Cong khai
+Play	Choi
+Pass	Chuyen
+Pen	Cay but
+Pencil	But chi
+Penis	Duong vat
+Pepper	Ot
+Perfumed	Nuoc hoa
+Press 	An
+Polution	O nhiem
+Pocket	Cai vi
+Poem	Bai tho
+Point	Diem
+Red	Mau do
+Rescuse	Giai cuu
+Run	Chay
+Ronaldo	Goat
+Rush	Tang toc
+Ring	Cai nhan
+Riot	Su nao loan
+Rise	Troi day
+River	Dong song
+Road	Con Duong
+Short	Ngan
+Sing	Hat
+Suck	Do te
+Sink	Voi hoa sen
+Say	Noi
+Speak	Phat bieu
+Skin	Da
+Skill	Ki nang
+Sun	Mat troi
+Simple	Don gian
+Sign	Dau hieu
+Singer	Ca si
+Sister	Chi gai
+Sit	Ngoi xuong
+Skate	Truot van
+Snow	Tuyet	
+Slow	Cham
+Sweet	Ngot
+Think	Suy nghi
+Threat	De doa
+Thump	Ngon tay cai
+Thing	Do vat
+Three	Ba
+Thrill	Mui khoan
+Throw	Vut di
+Thunder	Sam set
+Thursday	Thu nam
+Ticket	Tam ve
+Title	Tieu de
+Tie	Buoc
+Tear	Nuoc mat
+Time	Thoi gian
+Under	O duoi
+Up	Len
+Unit	Don vi
+Undo	Hoan tac
+Unfriend	Huy ket ban
+Unhandsome	Xau xi
+Vip	Vip
+Verse	Phan	
+Vehicle	Phuong tien
+Volume	Am luong
+Vaccine	Vac xin
+Vailoz	Vai lon
+Zoo	So thu
