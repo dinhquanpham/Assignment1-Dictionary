@@ -1,0 +1,7 @@
+---tìm đường dẫn project java:
+https://ngockhuong.com/java/cach-lay-dia-chi-thu-muc-java-project-trong-java.html
+---đọc và ghi vào file txt:
+https://niithanoi.edu.vn/cach-doc-file-trong-java.html
+https://giasutinhoc.vn/lap-trinh/lap-trinh-java-co-ban/doc-va-ghi-file-trong-java-bai-5-2/
+---đọc 1 dòng nhiều từ java
+https://stackoverflow.com/questions/34891360/how-to-input-multiple-strings-on-one-line-in-java
