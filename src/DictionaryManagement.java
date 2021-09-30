@@ -61,4 +61,32 @@ public class DictionaryManagement {
             System.out.printf("%d\t|%s\t|%s\n", cnt, word_target, word_explain);
         }
     }
+
+    /**
+     * Tra cuu tu dien.
+     */
+    public static void dictionaryLookup(String lookupWord) {
+        int found = 0;
+        for (Word word : dictionary) {
+            String curWord = word.getWord_target();
+            if (lookupWord.equalsIgnoreCase(curWord)) {
+                System.out.println(lookupWord + " mean: " + word.getWord_explain());
+                found = 1;
+                break;
+            }
+        }
+        if (found == 0) {
+            System.out.println("Tu nay khong co trong tu dien");
+        }
+    }
+
+    /**
+     * Xoa du lieu tu dien = dong lenh.
+     */
+    public static void eraseWord(String ans) {
+        int index = -1;
+        for (Word word : dictionary) {
+
+        }
+    }
 }
