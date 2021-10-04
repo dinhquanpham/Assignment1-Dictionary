@@ -261,5 +261,4 @@ Verse	Phan
 Vehicle	Phuong tien
 Volume	Am luong
 Vaccine	Vac xin
-Vailoz	Vai lon
 Zoo	So thu
