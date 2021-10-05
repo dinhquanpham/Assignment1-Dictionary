@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.io.IOException;
 
 public class DictionaryCommandLine {
     /**
@@ -13,15 +14,18 @@ public class DictionaryCommandLine {
     /**
      * Tu dien nang cao.
      */
-    public void dictionaryAdvanced() throws FileNotFoundException {
+    public void dictionaryAdvanced() throws FileNotFoundException, IOException{
         DictionaryManagement.insertFromFile();
+        //DictionaryManagement.showAllWords();
+        //Scanner stdin = new Scanner(System.in);
+        //String inputWord = stdin.nextLine();
+        //DictionaryManagement.dictionaryLookup(inputWord);
+        DictionaryManagement.dictionaryRemove("Vailoz");
         DictionaryManagement.showAllWords();
-        Scanner stdin = new Scanner(System.in);
-        String inputWord = stdin.nextLine();
-        DictionaryManagement.dictionaryLookup(inputWord);
+        DictionaryManagement.resetDictionaryData();
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         DictionaryCommandLine newDictionary = new DictionaryCommandLine();
         newDictionary.dictionaryAdvanced();
     }
