@@ -1,6 +1,6 @@
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class DictionaryCommandLine {
     /**
@@ -16,12 +16,10 @@ public class DictionaryCommandLine {
      */
     public void dictionaryAdvanced() throws FileNotFoundException, IOException{
         DictionaryManagement.insertFromFile();
-        //DictionaryManagement.showAllWords();
-        //Scanner stdin = new Scanner(System.in);
-        //String inputWord = stdin.nextLine();
-        //DictionaryManagement.dictionaryLookup(inputWord);
-        DictionaryManagement.dictionaryRemove("Vailoz");
         DictionaryManagement.showAllWords();
+        Scanner stdin = new Scanner(System.in);
+        String inputWord = stdin.nextLine();
+        DictionaryManagement.dictionarySearch(inputWord);
         DictionaryManagement.resetDictionaryData();
     }
 

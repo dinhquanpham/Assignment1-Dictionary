@@ -26,13 +26,14 @@ public class DictionaryManagement {
      */
     public static void insertFromFile() throws FileNotFoundException {
         String projectAddress = System.getProperty("user.dir");
-        String dictionaryAddress = projectAddress + "\\data\\dictionaries.txt";
+        String dictionaryAddress = projectAddress + "\\data\\english-vietnamese.txt";
         FileInputStream fileInputStream = new FileInputStream(dictionaryAddress);
         Scanner stdin = new Scanner(fileInputStream);
         try {
             while (stdin.hasNextLine()) {
                 String line = stdin.nextLine();
-                String[] strArr = line.split("\t");
+                String reglex = "\t";
+                String[] strArr = line.split(reglex,2);
                 String word_target = strArr[0];
                 String word_explain = strArr[1];
                 Word newWord = new Word(word_target, word_explain);
@@ -59,7 +60,8 @@ public class DictionaryManagement {
             cnt++;
             String word_target = word.getWord_target();
             String word_explain = word.getWord_explain();
-            System.out.printf("%d\t|%s\t|%s\n", cnt, word_target, word_explain);
+            System.out.printf("%d\t%s\n", cnt, word_target);
+            System.out.printf("%s\n",word_explain.replace("#","\n"));
         }
     }
 
@@ -82,9 +84,9 @@ public class DictionaryManagement {
     }
 
     /**
-     * Them du lieu.
+     * Them tu moi vao tu dien.
      */
-    public static void dictionaryAdd(Word newWord) {
+        public static void dictionaryAdd(Word newWord) {
         String word_target = newWord.getWord_target();
         String word_explain = newWord.getWord_explain();
         int index = -1;
@@ -129,11 +131,16 @@ public class DictionaryManagement {
     /**
      * Tim kiem tu tien to.
      */
-    public static void dictionarySearch(String targerWord) {
+    public static void dictionarySearch(String targetWord) {
+        int found_targetWord = 0;
         for (Word word :dictionary) {
-            if (word.getWord_target().startsWith(targerWord)) {
+            if (word.getWord_target().startsWith(targetWord)) {
+                found_targetWord = 1;
                 System.out.println(word.getWord_target());
             }
+        }
+        if (found_targetWord == 0) {
+            System.out.printf("Khong co tu de tim kiem" + "\n");
         }
     }
 
