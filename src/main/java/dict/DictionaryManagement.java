@@ -1,3 +1,4 @@
+package dict;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -60,7 +61,7 @@ public class DictionaryManagement {
             cnt++;
             String word_target = word.getWord_target();
             String word_explain = word.getWord_explain();
-            System.out.printf("%d\t%s\n", cnt, word_target);
+            System.out.printf("%d\t%s   ", cnt, word_target);
             System.out.printf("%s\n",word_explain.replace("#","\n"));
         }
     }
