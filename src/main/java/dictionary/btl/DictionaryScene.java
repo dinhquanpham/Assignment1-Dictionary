@@ -44,9 +44,11 @@ public class DictionaryScene extends DictionaryManagement {
     /**
      * Commandline.
      */
+    @FXML
     public void DictionaryBasic(ActionEvent event) {
         DictionaryCommandLine.dictionaryBasic();
     }
+    @FXML
     public void DictionaryAvanced(ActionEvent event) throws FileNotFoundException, IOException{
         DictionaryCommandLine.dictionaryAdvanced();
     }
@@ -56,8 +58,8 @@ public class DictionaryScene extends DictionaryManagement {
      */
     @FXML
     public void SearchButton() {
-        String currentWord = SearchWord.getText();
         PrintWord.getChildren().clear();
+        String currentWord = SearchWord.getText();
         Label label = new Label();
         label.setText(DictionaryManagement.getDictionaryLookup(currentWord));
         PrintWord.getChildren().add(label);
@@ -67,7 +69,9 @@ public class DictionaryScene extends DictionaryManagement {
     public void LookUpFunction() {
         SearchList.getChildren().clear();
         ArrayList<String> searchListArray = DictionaryManagement.getDictionarySearch(SearchWord.getText());
-        int arraySize = Math.min(30, searchListArray.size());
+
+        int arraySize = Math.min(40, searchListArray.size());
+
         for (int i = 0; i < arraySize; i++) {
             Button button = new Button();
             button.setText(searchListArray.get(i));
@@ -76,7 +80,7 @@ public class DictionaryScene extends DictionaryManagement {
                 PrintWord.getChildren().clear();
                 Label label = new Label();
                 String result = DictionaryManagement.getDictionaryLookup(currentWord);
-                label.setText(result);
+                label.setText(currentWord + "\n" + "\t" + result);
                 PrintWord.getChildren().add(label);
             };
             button.setOnAction(event);

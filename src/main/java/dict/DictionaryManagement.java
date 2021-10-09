@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DictionaryManagement {
-    public static ArrayList<Word> dictionary = new ArrayList();
+    public static Trie dictionary = new Trie();
 
     /**
      * Nhap tu moi tu CommandLine vao tu dien.
@@ -55,9 +55,10 @@ public class DictionaryManagement {
      * Hien thi toan bo tu dien.
      */
     public static void showAllWords() {
+        ArrayList<Word> words = dictionary.getArrayListFromTrie();
         System.out.printf("No\t|English\t|Vietnamese\n");
         int cnt = 0;
-        for (Word word : dictionary) {
+        for (Word word : words) {
             cnt++;
             String word_target = word.getWord_target();
             String word_explain = word.getWord_explain();
@@ -70,99 +71,51 @@ public class DictionaryManagement {
      * Tra ve gia tri tra cuu tu dien.
      */
     public static String getDictionaryLookup(String lookupWord) {
-        int found = 0;
-        String ans = "";
-        for (Word word : dictionary) {
-            String curWord = word.getWord_target();
-            if (lookupWord.equalsIgnoreCase(curWord)) {
-                ans = lookupWord + "\n" + word.getWord_explain().replace("#","\n");
-                found = 1;
-                break;
-            }
-        }
-        if (found == 0) {
-
-            return ("Tu nay khong co trong tu dien");
-        }
-        return ans;
+        String Word = dictionary.LookUp(lookupWord).replace("#","\n");
+        return Word;
     }
 
     /**
      * Tra cuu tu dien
      */
     public static void dictionaryLookup(String lookupWord) {
-        int found = 0;
-        for (Word word : dictionary) {
-            String curWord = word.getWord_target();
-            if (lookupWord.equalsIgnoreCase(curWord)) {
-                System.out.println(lookupWord + " mean: " + word.getWord_explain());
-                found = 1;
-                break;
-            }
-        }
-        if (found == 0) {
-            System.out.println("Tu nay khong co trong tu dien");
-        }
+
+//        int found = 0;
+//        for (Word word : dictionary) {
+//            String curWord = word.getWord_target();
+//            if (lookupWord.equalsIgnoreCase(curWord)) {
+//                System.out.println(lookupWord + " mean: " + word.getWord_explain());
+//                found = 1;
+//                break;
+//            }
+//        }
+//        if (found == 0) {
+//            System.out.println("Tu nay khong co trong tu dien");
+//        }
+        System.out.println(getDictionaryLookup(lookupWord));
     }
 
     /**
      * Them tu moi vao tu dien.
      */
-        public static void dictionaryAdd(Word newWord) {
-        String word_target = newWord.getWord_target();
-        String word_explain = newWord.getWord_explain();
-        int index = -1;
-        for (int i = 0; i < dictionary.size() - 1; i++) {
-            String prevWord = dictionary.get(i).getWord_target();
-            String nextWord = dictionary.get(i + 1).getWord_target();
-            if (word_target.compareTo(prevWord) > 0 && word_target.compareTo(nextWord) < 0) {
-                index = i;
-                break;
-            }
-        }
-        if (index != -1) {
-            dictionary.add(index, newWord);
-        } else {
-            if (dictionary.size() == 0)return;
-            if (word_target.compareTo(dictionary.get(0).getWord_target()) < 0) {
-                dictionary.add(0, newWord);
-            } else {
-                dictionary.add(newWord);
-            }
-        }
+    public static void dictionaryAdd(Word newWord) {
+        dictionary.add(newWord);
     }
 
     /**
      * Xoa du lieu tu dien.
      */
     public static void dictionaryRemove(String removeWord) {
-        int index = -1;
-        for (int i = 0; i < dictionary.size(); i++) {
-            if (removeWord.equalsIgnoreCase(dictionary.get(i).getWord_target())) {
-                index = i;
-                break;
-            }
-        }
-        if (index != -1) {
-            dictionary.remove(index);
-        } else {
-            System.out.println("Tu nay khong co trong tu dien");
-        }
+        dictionary.delete(removeWord);
     }
 
     /**
      * Tim kiem tu tien to.
      */
     public static void dictionarySearch(String targetWord) {
-        int found_targetWord = 0;
-        for (Word word :dictionary) {
-            if (word.getWord_target().startsWith(targetWord)) {
-                found_targetWord = 1;
-                System.out.println(word.getWord_target());
-            }
-        }
-        if (found_targetWord == 0) {
-            System.out.printf("Khong co tu de tim kiem" + "\n");
+        ArrayList<String> searchList = dictionary.getDictionarySearch(targetWord);
+        for (String word : searchList) {
+            System.out.println(word);
         }
     }
 
@@ -170,16 +123,7 @@ public class DictionaryManagement {
      * Lay du lieu tu dictionarySearch
      */
     public static ArrayList<String> getDictionarySearch(String targetWord) {
-        int foundTargetWord = 0;
-        ArrayList<String> searchList = new ArrayList<>();
-        for (Word word :dictionary) {
-            if (word.getWord_target().startsWith(targetWord)) {
-                foundTargetWord = 1;
-                String word_target = word.getWord_target();
-                searchList.add(word_target);
-            }
-        }
-        return searchList;
+        return dictionary.getDictionarySearch(targetWord);
     }
     /**
      * Chinh sua lai du lieu tu dien trong file txt
@@ -188,7 +132,8 @@ public class DictionaryManagement {
         String projectAddress = System.getProperty("user.dir");
         String dictionaryAddress = projectAddress + "\\data\\dictionaries.txt";
         FileWriter fileWriter = new FileWriter(dictionaryAddress);
-        for (Word word : dictionary) {
+        ArrayList<Word> words = dictionary.getArrayListFromTrie();
+        for (Word word : words) {
             fileWriter.write(word.getWord_target() + "\t" + word.getWord_explain() + '\n');
         }
         fileWriter.close();

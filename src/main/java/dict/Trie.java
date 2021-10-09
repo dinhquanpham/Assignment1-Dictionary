@@ -1,5 +1,6 @@
 package dict;
 
+import javax.xml.transform.Result;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.SortedSet;
@@ -23,7 +24,7 @@ public class Trie {
     /**
      * Tra tu.
      */
-    public String search(String searchWord) {
+    public String LookUp(String searchWord) {
         TrieNode current = root;
         for (char c : searchWord.toLowerCase().toCharArray()) {
             TrieNode node = current.getChildren().get(c);
@@ -81,8 +82,12 @@ public class Trie {
         }
     }
 
-    public ArrayList<Word> get() {
+    public ArrayList<Word> getArrayListFromTrie() {
+        resultWords = new ArrayList();
         get(root);
+        if (resultWords.size() == 0) {
+            return null;
+        }
         return resultWords;
     }
 
@@ -101,6 +106,7 @@ public class Trie {
     }
 
     public ArrayList<String> getDictionarySearch(String targetWord) {
+        resultWords1 = new ArrayList();
         TrieNode current = root;
         for (char c : targetWord.toLowerCase().toCharArray()) {
             TrieNode node = current.getChildren().get(c);
@@ -110,6 +116,9 @@ public class Trie {
             current = node;
         }
         getDictionarySearch(current);
+        if (resultWords1.size() == 0) {
+            return null;
+        }
         return resultWords1;
     }
 }
