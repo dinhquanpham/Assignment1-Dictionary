@@ -1,6 +1,7 @@
 package dict;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -12,7 +13,7 @@ public class Trie {
      */
     public void add(Word addWord) {
         TrieNode current = root;
-        for (char c : addWord.getWord_target().toCharArray()) {
+        for (char c : addWord.getWord_target().toLowerCase().toCharArray()) {
             current = current.getChildren().computeIfAbsent(c, newNode -> new TrieNode());
         }
         current.setIsWord(true);
@@ -24,7 +25,7 @@ public class Trie {
      */
     public String search(String searchWord) {
         TrieNode current = root;
-        for (char c : searchWord.toCharArray()) {
+        for (char c : searchWord.toLowerCase().toCharArray()) {
             TrieNode node = current.getChildren().get(c);
             if (node == null) {
                 return "Tu nay khong ton tai";
@@ -63,16 +64,16 @@ public class Trie {
     }
 
     public void delete(String deleteWord) {
-        delete(root, deleteWord, 0);
+        delete(root, deleteWord.toLowerCase(), 0);
     }
 
     /**
      * Toan bo tu dien.
      */
-    private ArrayList<Word> dictionary = new ArrayList();
+    private ArrayList<Word> resultWords = new ArrayList();
     private void get(TrieNode current) {
         if (current.getIsWord()) {
-            dictionary.add(current.getContent());
+            resultWords.add(current.getContent());
         }
         SortedSet<Character> children = new TreeSet<>(current.getChildren().keySet());
         for (char c : children) {
@@ -82,6 +83,33 @@ public class Trie {
 
     public ArrayList<Word> get() {
         get(root);
-        return dictionary;
+        return resultWords;
+    }
+
+    /**
+     * Tra cac tu tien to.
+     */
+    private ArrayList<String> resultWords1 = new ArrayList();
+    private void getDictionarySearch(TrieNode current) {
+        if (current.getIsWord()) {
+            resultWords1.add(current.getContent().getWord_target());
+        }
+        SortedSet<Character> children = new TreeSet<>(current.getChildren().keySet());
+        for (char c : children) {
+            getDictionarySearch(current.getChildren().get(c));
+        }
+    }
+
+    public ArrayList<String> getDictionarySearch(String targetWord) {
+        TrieNode current = root;
+        for (char c : targetWord.toLowerCase().toCharArray()) {
+            TrieNode node = current.getChildren().get(c);
+            if (node == null) {
+                return resultWords1;
+            }
+            current = node;
+        }
+        getDictionarySearch(current);
+        return resultWords1;
     }
 }
