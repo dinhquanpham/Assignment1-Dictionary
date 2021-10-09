@@ -67,7 +67,28 @@ public class DictionaryManagement {
     }
 
     /**
-     * Tra cuu tu dien.
+     * Tra ve gia tri tra cuu tu dien.
+     */
+    public static String getDictionaryLookup(String lookupWord) {
+        int found = 0;
+        String ans = "";
+        for (Word word : dictionary) {
+            String curWord = word.getWord_target();
+            if (lookupWord.equalsIgnoreCase(curWord)) {
+                ans = lookupWord + " mean: " + word.getWord_explain().replace("#","\n");
+                found = 1;
+                break;
+            }
+        }
+        if (found == 0) {
+
+            return ("Tu nay khong co trong tu dien");
+        }
+        return ans;
+    }
+
+    /**
+     * Tra cuu tu dien
      */
     public static void dictionaryLookup(String lookupWord) {
         int found = 0;
@@ -145,6 +166,21 @@ public class DictionaryManagement {
         }
     }
 
+    /**
+     * Lay du lieu tu dictionarySearch
+     */
+    public static ArrayList<String> getDictionarySearch(String targetWord) {
+        int found_targetWord = 0;
+        ArrayList<String> searchList = new ArrayList<>();
+        for (Word word :dictionary) {
+            if (word.getWord_target().startsWith(targetWord)) {
+                found_targetWord = 1;
+                String word_target = word.getWord_target();
+                searchList.add(word_target);
+            }
+        }
+        return searchList;
+    }
     /**
      * Chinh sua lai du lieu tu dien trong file txt
      */
