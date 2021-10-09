@@ -1,6 +1,8 @@
 package dict;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class Trie {
     private TrieNode root = new TrieNode();
@@ -65,22 +67,21 @@ public class Trie {
     }
 
     /**
-     * In tu dien.
+     * Toan bo tu dien.
      */
-    private int cnt = 0;
-    private void print(TrieNode current) {
+    private ArrayList<Word> dictionary = new ArrayList();
+    private void get(TrieNode current) {
         if (current.getIsWord()) {
-            cnt++;
-            System.out.printf("%d\t%s\t", cnt, current.getContent().getWord_target());
-            System.out.printf("%s\n", current.getContent().getWord_explain());
+            dictionary.add(current.getContent());
         }
-        Set<Character> children = current.getChildren().keySet();
+        SortedSet<Character> children = new TreeSet<>(current.getChildren().keySet());
         for (char c : children) {
-            print(current.getChildren().get(c));
+            get(current.getChildren().get(c));
         }
     }
 
-    public void print() {
-        print(root);
+    public ArrayList<Word> get() {
+        get(root);
+        return dictionary;
     }
 }
