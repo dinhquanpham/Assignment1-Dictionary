@@ -9,22 +9,21 @@ import javafx.scene.shape.Polygon;
 
 import java.io.FileNotFoundException;
 
-public class Dictionary_Scene extends DictionaryManagement {
+public class Dictionary_Scene  {
     @FXML
-    private TextField DictTextFeild;
-    @FXML
-    private Button SearchButton;
-    private Polygon Circle;
-    private double x;
-    private double y;
+    private TextField SearchTextField;
     @FXML
     public void InsertFormFile() throws FileNotFoundException {
-        DictionaryManagement.insertFromFile();
     }
     public void SearchFunction() {
         //DictionaryManagement.dictionarySearch();
     }
-    public void ShowAllWord() {
+    public void getSearch(ActionEvent event) {
+        String SearchWord = SearchTextField.getText();
+        System.out.print("SearchWord");
+    }
+    public void ShowAllWord() throws FileNotFoundException {
+        DictionaryManagement.insertFromFile();
         DictionaryManagement.showAllWords();
     }
 
