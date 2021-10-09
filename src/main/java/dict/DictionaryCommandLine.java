@@ -7,25 +7,20 @@ public class DictionaryCommandLine {
     /**
      * Tu dien don gian.
      */
-    public void dictionaryBasic() {
-        DictionaryManagement.insertFromCommandline();
+    public static void dictionaryBasic() {
         DictionaryManagement.showAllWords();
     }
 
     /**
      * Tu dien nang cao.
      */
-    public void dictionaryAdvanced() throws FileNotFoundException, IOException{
+    public static void dictionaryAdvanced() throws FileNotFoundException, IOException{
         DictionaryManagement.insertFromFile();
         DictionaryManagement.showAllWords();
-        Scanner stdin = new Scanner(System.in);
-        String inputWord = stdin.nextLine();
-        DictionaryManagement.dictionarySearch(inputWord);
-        DictionaryManagement.resetDictionaryData();
+        DictionaryManagement.dictionaryExportToFile();
     }
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        DictionaryCommandLine newDictionary = new DictionaryCommandLine();
-        newDictionary.dictionaryAdvanced();
+        DictionaryCommandLine.dictionaryAdvanced();
     }
 }

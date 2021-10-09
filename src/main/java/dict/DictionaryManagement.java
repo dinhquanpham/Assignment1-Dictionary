@@ -75,7 +75,7 @@ public class DictionaryManagement {
         for (Word word : dictionary) {
             String curWord = word.getWord_target();
             if (lookupWord.equalsIgnoreCase(curWord)) {
-                ans = lookupWord + " mean: " + word.getWord_explain().replace("#","\n");
+                ans = lookupWord + "\n" + word.getWord_explain().replace("#","\n");
                 found = 1;
                 break;
             }
@@ -170,11 +170,11 @@ public class DictionaryManagement {
      * Lay du lieu tu dictionarySearch
      */
     public static ArrayList<String> getDictionarySearch(String targetWord) {
-        int found_targetWord = 0;
+        int foundTargetWord = 0;
         ArrayList<String> searchList = new ArrayList<>();
         for (Word word :dictionary) {
             if (word.getWord_target().startsWith(targetWord)) {
-                found_targetWord = 1;
+                foundTargetWord = 1;
                 String word_target = word.getWord_target();
                 searchList.add(word_target);
             }
@@ -184,7 +184,7 @@ public class DictionaryManagement {
     /**
      * Chinh sua lai du lieu tu dien trong file txt
      */
-    public static void resetDictionaryData() throws IOException {
+    public static void dictionaryExportToFile() throws IOException {
         String projectAddress = System.getProperty("user.dir");
         String dictionaryAddress = projectAddress + "\\data\\dictionaries.txt";
         FileWriter fileWriter = new FileWriter(dictionaryAddress);

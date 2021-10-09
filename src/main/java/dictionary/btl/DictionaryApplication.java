@@ -13,9 +13,9 @@ public class DictionaryApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         DictionaryManagement.insertFromFile();
-        Parent root = FXMLLoader.load(getClass().getResource("/dictionary/btl/Dictionary_Scene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/dictionary/btl/DictionaryScene.fxml"));
         Scene scene = new Scene(root);
-        stage.setTitle("Dictionary_Offline");
+        stage.setTitle("Dictionary");
         stage.setScene(scene);
         stage.show();
     }
