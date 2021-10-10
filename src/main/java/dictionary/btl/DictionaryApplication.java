@@ -14,7 +14,7 @@ public class DictionaryApplication extends Application {
     public void start(Stage stage) throws IOException {
         DictionaryManagement.insertFromFile();
         Parent root = FXMLLoader.load(getClass().getResource("/dictionary/btl/DictionaryScene.fxml"));
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root, 900, 625);
         stage.setTitle("Dictionary");
         stage.setScene(scene);
         stage.show();

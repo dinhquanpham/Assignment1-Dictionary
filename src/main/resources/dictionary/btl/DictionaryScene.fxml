@@ -18,9 +18,9 @@
    <children>
       <AnchorPane layoutY="-16.0" prefHeight="641.0" prefWidth="902.0" style="-fx-background-color: #DCDCDC;">
          <children>
-            <TextField fx:id="SearchWord" layoutX="56.0" layoutY="60.0" onKeyTyped="#LookUpFunction" prefHeight="27.0" prefWidth="109.0" promptText="Tìm kiếm" />
-            <Button layoutX="178.0" layoutY="61.0" mnemonicParsing="false" onAction="#SearchButton" text="Tìm kiếm" />
-            <ScrollPane layoutX="28.0" layoutY="118.0" prefHeight="470.0" prefWidth="243.0" style="-fx-background-color: #DCDCDC;">
+            <TextField fx:id="SearchWord" layoutX="54.0" layoutY="83.0" onKeyTyped="#LookUpFunction" prefHeight="27.0" prefWidth="109.0" promptText="Tìm kiếm" />
+            <Button layoutX="189.0" layoutY="84.0" mnemonicParsing="false" onAction="#SearchButton" text="Tìm kiếm" />
+            <ScrollPane layoutX="28.0" layoutY="130.0" prefHeight="470.0" prefWidth="243.0" style="-fx-background-color: #DCDCDC;">
                <content>
                   <VBox fx:id="SearchList" onDragDetected="#LookUpFunction" prefHeight="288.0" prefWidth="145.0" />
                </content>
@@ -37,7 +37,7 @@
                 <Menu mnemonicParsing="false" text="Edit">
                   <items>
                     <MenuItem mnemonicParsing="false" text="Delete A Word" />
-                        <MenuItem mnemonicParsing="false" text="Add A Word" />
+                        <MenuItem mnemonicParsing="false" onAction="#HandleAddButton" text="Add A Word" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="CommandLine">
@@ -49,7 +49,7 @@
                   <Menu mnemonicParsing="false" text="About" />
               </menus>
             </MenuBar>
-            <ScrollPane layoutX="334.0" layoutY="117.0" onDragDetected="#SearchButton" prefHeight="470.0" prefWidth="492.0">
+            <ScrollPane layoutX="334.0" layoutY="130.0" onDragDetected="#SearchButton" prefHeight="470.0" prefWidth="492.0">
                <content>
                   <VBox fx:id="PrintWord" prefHeight="547.0" prefWidth="386.0" />
                </content>
@@ -69,6 +69,8 @@
                   </Lighting>
                </effect>
             </Text>
+            <Button fx:id="addButton" layoutX="9.0" layoutY="50.0" mnemonicParsing="false" onAction="#HandleAddButton" text="Add" textFill="#294b23" AnchorPane.rightAnchor="855.0" />
+            <Button layoutX="48.0" layoutY="50.0" mnemonicParsing="false" text="Delete" />
          </children>
       </AnchorPane>
    </children>

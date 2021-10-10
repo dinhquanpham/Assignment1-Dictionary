@@ -2,15 +2,17 @@ package dictionary.btl;
 
 import dict.DictionaryCommandLine;
 import dict.DictionaryManagement;
+import dict.Word;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -53,6 +55,34 @@ public class DictionaryScene extends DictionaryManagement {
         DictionaryCommandLine.dictionaryAdvanced();
     }
 
+    @FXML
+    Button addButton;
+    @FXML
+    Button backButton;
+    @FXML
+    Button addBackButton;
+    @FXML
+    MenuItem addWord;
+    @FXML
+    TextArea newWordTarget;
+    @FXML
+    TextArea newWordExplain;
+    public void HandleAddButton() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/dictionary/btl/AddWord.fxml"));
+        Stage window = (Stage) addButton.getScene().getWindow();
+        window.setScene(new Scene(root, 500, 350));
+        EventHandler<ActionEvent> event = e -> {
+            dictionary.add(new Word(newWordTarget.getText(), newWordExplain.getText()));
+            System.out.println(newWordTarget.getText() + "      " + newWordExplain.getText());
+        };
+        window.show();
+    }
+    public void HandleBackButton() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/dictionary/btl/DictionaryScene.fxml"));
+        Stage window = (Stage) backButton.getScene().getWindow();
+        window.setScene(new Scene(root, 900, 625));
+        window.show();
+    }
     /**
      * Xu ly man hinh giao dien
      */
@@ -69,9 +99,7 @@ public class DictionaryScene extends DictionaryManagement {
     public void LookUpFunction() {
         SearchList.getChildren().clear();
         ArrayList<String> searchListArray = DictionaryManagement.getDictionarySearch(SearchWord.getText());
-
         int arraySize = Math.min(40, searchListArray.size());
-
         for (int i = 0; i < arraySize; i++) {
             Button button = new Button();
             button.setText(searchListArray.get(i));

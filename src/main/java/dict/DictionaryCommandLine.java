@@ -16,7 +16,7 @@ public class DictionaryCommandLine {
      */
     public static void dictionaryAdvanced() throws FileNotFoundException, IOException{
         DictionaryManagement.insertFromFile();
-        DictionaryManagement.showAllWords();
+        //DictionaryManagement.showAllWords();
         DictionaryManagement.dictionaryExportToFile();
     }
 
