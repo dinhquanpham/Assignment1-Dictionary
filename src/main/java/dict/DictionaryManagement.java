@@ -79,19 +79,6 @@ public class DictionaryManagement {
      * Tra cuu tu dien
      */
     public static void dictionaryLookup(String lookupWord) {
-
-//        int found = 0;
-//        for (Word word : dictionary) {
-//            String curWord = word.getWord_target();
-//            if (lookupWord.equalsIgnoreCase(curWord)) {
-//                System.out.println(lookupWord + " mean: " + word.getWord_explain());
-//                found = 1;
-//                break;
-//            }
-//        }
-//        if (found == 0) {
-//            System.out.println("Tu nay khong co trong tu dien");
-//        }
         System.out.println(getDictionaryLookup(lookupWord));
     }
 
@@ -109,6 +96,13 @@ public class DictionaryManagement {
         dictionary.delete(removeWord);
     }
 
+    /**
+     * Chinh sua du lieu tu dien
+     */
+    public static void setDictionaryEdit(Word currentWord) {
+        dictionary.delete(currentWord.getWord_target());
+        dictionary.add(currentWord);
+    }
     /**
      * Tim kiem tu tien to.
      */

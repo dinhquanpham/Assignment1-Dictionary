@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dictionary.btl.DictionaryAbout">
+   <children>
+      <Text layoutX="130.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Từ điển Anh - Việt">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="59.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phát triển bởi:" />
+      <Text layoutX="67.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Vũ Minh Sang" />
+      <Text layoutX="67.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Phạm Đình Quân" wrappingWidth="94.962890625" />
+      <Text layoutX="67.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Hoàng Trọng Nghĩa" />
+      <Text layoutX="59.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TÍnh năng cơ bản: thêm, xóa, sửa từ" />
+      <Text layoutX="59.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thuật toán: Trie" />
+      <Text layoutX="59.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Giao diện: JavaFX + Scene Builder" />
+   </children>
+</AnchorPane>

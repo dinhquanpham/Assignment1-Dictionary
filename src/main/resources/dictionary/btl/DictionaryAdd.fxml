@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="262.0" prefWidth="497.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dictionary.btl.DictionaryAdd">
+   <children>
+      <TextField fx:id="newWordTarget" layoutX="126.0" layoutY="62.0" prefHeight="18.0" prefWidth="262.0" promptText="Insert" />
+      <TextField fx:id="newWordExplain" layoutX="126.0" layoutY="118.0" prefHeight="66.0" prefWidth="262.0" promptText="Insert" />
+      <Button layoutX="230.0" layoutY="198.0" mnemonicParsing="false" onAction="#getNewWord" text="Add" />
+      <Text layoutX="32.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Word" />
+      <Text layoutX="37.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning" />
+   </children>
+</AnchorPane>

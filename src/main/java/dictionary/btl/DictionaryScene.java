@@ -17,15 +17,9 @@ import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class DictionaryScene extends DictionaryManagement {
-    @FXML
-    private TextField SearchWord;
-    @FXML
-    private VBox PrintWord;
-    @FXML
-    private VBox SearchList;
-
     /**
      * File menu
      */
@@ -44,6 +38,50 @@ public class DictionaryScene extends DictionaryManagement {
     }
 
     /**
+     * Edit.
+     */
+    @FXML
+    public void HandleAdd() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/dictionary/btl/DictionaryAdd.fxml"));
+        Parent root = loader.load();
+        Stage window = new Stage();
+        window.setScene(new Scene(root, 500, 250));
+        window.setTitle("Add");
+        window.show();
+    }
+    @FXML
+    public void HandleDelete() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/dictionary/btl/DictionaryDelete.fxml"));
+        Parent root = loader.load();
+        Stage window = new Stage();
+        window.setScene(new Scene(root, 500, 250));
+        window.setTitle("Delete");
+        window.show();
+    }
+    @FXML
+    public void HandleEdit() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/dictionary/btl/DictionaryEdit.fxml"));
+        Parent root = loader.load();
+        Stage window = new Stage();
+        window.setScene(new Scene(root, 500, 250));
+        window.setTitle("Edit");
+        window.show();
+    }
+
+    /**
+     * About
+     */
+    @FXML
+    public void HandleAbout() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/dictionary/btl/DictionaryAbout.fxml"));
+        Parent root = loader.load();
+        Stage window = new Stage();
+        window.setScene(new Scene(root, 500, 400));
+        window.setTitle("About");
+        window.show();
+    }
+
+    /**
      * Commandline.
      */
     @FXML
@@ -55,46 +93,32 @@ public class DictionaryScene extends DictionaryManagement {
         DictionaryCommandLine.dictionaryAdvanced();
     }
 
-    @FXML
-    Button addButton;
-    @FXML
-    Button backButton;
-    @FXML
-    Button addBackButton;
-    @FXML
-    MenuItem addWord;
-    @FXML
-    TextArea newWordTarget;
-    @FXML
-    TextArea newWordExplain;
-    public void HandleAddButton() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/dictionary/btl/AddWord.fxml"));
-        Stage window = (Stage) addButton.getScene().getWindow();
-        window.setScene(new Scene(root, 500, 350));
-        EventHandler<ActionEvent> event = e -> {
-            dictionary.add(new Word(newWordTarget.getText(), newWordExplain.getText()));
-            System.out.println(newWordTarget.getText() + "      " + newWordExplain.getText());
-        };
-        window.show();
-    }
-    public void HandleBackButton() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/dictionary/btl/DictionaryScene.fxml"));
-        Stage window = (Stage) backButton.getScene().getWindow();
-        window.setScene(new Scene(root, 900, 625));
-        window.show();
-    }
     /**
      * Xu ly man hinh giao dien
      */
+    @FXML
+    private TextField SearchWord;
+    @FXML
+    private VBox PrintWord;
     @FXML
     public void SearchButton() {
         PrintWord.getChildren().clear();
         String currentWord = SearchWord.getText();
         Label label = new Label();
-        label.setText(DictionaryManagement.getDictionaryLookup(currentWord));
-        PrintWord.getChildren().add(label);
+        String result = DictionaryManagement.getDictionaryLookup(currentWord);
+        if (result == "Tu nay khong ton tai") {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo");
+            alert.setContentText("Từ này không tồn tại");
+            alert.show();
+        } else {
+            label.setText(currentWord + "\n" + "\t" + result);
+            PrintWord.getChildren().add(label);
+        }
     }
 
+    @FXML
+    private VBox SearchList;
     @FXML
     public void LookUpFunction() {
         SearchList.getChildren().clear();

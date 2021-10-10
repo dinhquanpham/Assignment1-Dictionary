@@ -36,8 +36,9 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Delete A Word" />
-                        <MenuItem mnemonicParsing="false" onAction="#HandleAddButton" text="Add A Word" />
+                    <MenuItem mnemonicParsing="false" onAction="#HandleDelete" text="Delete" />
+                        <MenuItem mnemonicParsing="false" onAction="#HandleAdd" text="Add" />
+                        <MenuItem mnemonicParsing="false" onAction="#HandleEdit" text="Edit" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="CommandLine">
@@ -46,7 +47,10 @@
                     <MenuItem mnemonicParsing="false" onAction="#DictionaryAvanced" text="Dictionary Avanced" />
                   </items>
                 </Menu>
-                  <Menu mnemonicParsing="false" text="About" />
+                  <Menu mnemonicParsing="false" text="About">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#HandleAbout" text="Project" />
+                     </items></Menu>
               </menus>
             </MenuBar>
             <ScrollPane layoutX="334.0" layoutY="130.0" onDragDetected="#SearchButton" prefHeight="470.0" prefWidth="492.0">
@@ -69,8 +73,6 @@
                   </Lighting>
                </effect>
             </Text>
-            <Button fx:id="addButton" layoutX="9.0" layoutY="50.0" mnemonicParsing="false" onAction="#HandleAddButton" text="Add" textFill="#294b23" AnchorPane.rightAnchor="855.0" />
-            <Button layoutX="48.0" layoutY="50.0" mnemonicParsing="false" text="Delete" />
          </children>
       </AnchorPane>
    </children>
