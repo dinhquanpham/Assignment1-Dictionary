@@ -10,6 +10,7 @@ module dictionary.btl {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires java.logging;
+    requires jlayer;
 
     opens dictionary.btl to javafx.fxml;
     exports dictionary.btl;

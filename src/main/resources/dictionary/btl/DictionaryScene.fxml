@@ -20,7 +20,7 @@
          <children>
             <TextField fx:id="SearchWord" layoutX="54.0" layoutY="83.0" onKeyTyped="#LookUpFunction" prefHeight="27.0" prefWidth="109.0" promptText="Tìm kiếm" />
             <Button layoutX="189.0" layoutY="84.0" mnemonicParsing="false" onAction="#SearchButton" text="Tìm kiếm" />
-            <ScrollPane layoutX="28.0" layoutY="130.0" prefHeight="470.0" prefWidth="243.0" style="-fx-background-color: #DCDCDC;">
+            <ScrollPane layoutX="54.0" layoutY="146.0" prefHeight="424.0" prefWidth="174.0" style="-fx-background-color: #DCDCDC;">
                <content>
                   <VBox fx:id="SearchList" onDragDetected="#LookUpFunction" prefHeight="288.0" prefWidth="145.0" />
                </content>
@@ -53,9 +53,9 @@
                      </items></Menu>
               </menus>
             </MenuBar>
-            <ScrollPane layoutX="334.0" layoutY="130.0" onDragDetected="#SearchButton" prefHeight="470.0" prefWidth="492.0">
+            <ScrollPane layoutX="331.0" layoutY="146.0" onDragDetected="#SearchButton" prefHeight="454.0" prefWidth="478.0">
                <content>
-                  <VBox fx:id="PrintWord" prefHeight="547.0" prefWidth="386.0" />
+                  <VBox fx:id="PrintWord" prefHeight="545.0" prefWidth="378.0" />
                </content>
             </ScrollPane>
             <Text fill="#3c479e" fontSmoothingType="LCD" layoutX="410.0" layoutY="88.0" stroke="#732f2f" strokeType="OUTSIDE" strokeWidth="0.0" text="TỪ ĐIỂN ANH - VIỆT" textAlignment="CENTER" wrappingWidth="339.7366943359375">
@@ -73,6 +73,7 @@
                   </Lighting>
                </effect>
             </Text>
+            <Button layoutX="331.0" layoutY="120.0" mnemonicParsing="false" onAction="#PronounceSearchWord" text="Button" />
          </children>
       </AnchorPane>
    </children>

@@ -16,8 +16,15 @@ import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Optional;
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.Player;
 
 public class DictionaryScene extends DictionaryManagement {
     /**
@@ -112,11 +119,11 @@ public class DictionaryScene extends DictionaryManagement {
             alert.setContentText("Từ này không tồn tại");
             alert.show();
         } else {
+            searchWord = currentWord;
             label.setText(currentWord + "\n" + "\t" + result);
             PrintWord.getChildren().add(label);
         }
     }
-
     @FXML
     private VBox SearchList;
     @FXML
@@ -131,6 +138,7 @@ public class DictionaryScene extends DictionaryManagement {
             EventHandler<ActionEvent> event = e -> {
                 PrintWord.getChildren().clear();
                 Label label = new Label();
+                searchWord = currentWord;
                 String result = DictionaryManagement.getDictionaryLookup(currentWord);
                 label.setText(currentWord + "\n" + "\t" + result);
                 PrintWord.getChildren().add(label);
@@ -139,5 +147,14 @@ public class DictionaryScene extends DictionaryManagement {
             SearchList.getChildren().add(button);
         }
 
+    }
+
+    public String searchWord = null;
+    /**
+     * Hàm trả về 1 button trong bảng chọn search list
+     */
+    @FXML
+    public void PronounceSearchWord(ActionEvent event) throws Exception {
+        GooglePronounce.pronounce(searchWord);
     }
 }

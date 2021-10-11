@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="350.0" prefWidth="500.0" style="-fx-background-color: #DCDCDC;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dictionary.btl.DictionaryScene">
+   <children>
+      <Text layoutX="17.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Word" />
+      <Text layoutX="22.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning" />
+      <Button fx:id="backButton" layoutX="439.0" layoutY="14.0" mnemonicParsing="false" onAction="#HandleBackButton" text="Back" />
+      <Button layoutX="224.0" layoutY="289.0" mnemonicParsing="false" onAction="#HandleAddButton" text="Add" />
+      <TextField fx:id="addNewWord" layoutX="91.0" layoutY="62.0" prefHeight="46.0" prefWidth="318.0" />
+      <TextField fx:id="addMeaningWord" layoutX="111.0" layoutY="150.0" prefHeight="121.0" prefWidth="173.0" />
+      <VBox fx:id="PrintAddWord" layoutX="309.0" layoutY="128.0" prefHeight="206.0" prefWidth="161.0" style="-fx-background-color: white;" />
+   </children>
+</AnchorPane>
