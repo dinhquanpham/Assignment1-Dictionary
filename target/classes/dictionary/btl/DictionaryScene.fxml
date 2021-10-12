@@ -81,9 +81,9 @@
                </effect>
             </Text>
             <Button layoutX="331.0" layoutY="120.0" mnemonicParsing="false" onAction="#PronounceSearchWord" text="Speak🔊" />
-            <ImageView fitHeight="112.0" fitWidth="110.0" layoutX="743.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="icon" fitHeight="112.0" fitWidth="110.0" layoutX="775.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../icon.jpg" />
+                  <Image url="@icon.jpg" />
                </image>
             </ImageView>
          </children>

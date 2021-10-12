@@ -10,6 +10,7 @@ import java.nio.charset.StandardCharsets;
 
 public class GooglePronounce {
     public static void pronounce(String text) throws Exception {
+        if (text == null)return;
         String api = "http://translate.google.com/translate_tts?ie=UTF-8&tl="+ "en" + "&client=tw-ob&q=" +
                 URLEncoder.encode(text, StandardCharsets.UTF_8);
         URL url = new URL(api);

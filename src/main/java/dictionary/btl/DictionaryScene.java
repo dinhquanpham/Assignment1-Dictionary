@@ -24,6 +24,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Optional;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
@@ -141,6 +142,8 @@ public class DictionaryScene extends DictionaryManagement {
     }
     @FXML
     private VBox SearchList;
+    @FXML
+    ImageView icon;
     @FXML
     public void LookUpFunction() {
         SearchList.getChildren().clear();
