@@ -11,6 +11,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -89,6 +91,19 @@ public class DictionaryScene extends DictionaryManagement {
     }
 
     /**
+     * Text Translate.
+     */
+    @FXML
+    public void HandleTranslateText(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/dictionary/btl/TextTranslate.fxml"));
+        Parent root = loader.load();
+        Stage window = new Stage();
+        window.setScene(new Scene(root, 600, 500));
+        window.setTitle("Translate Text");
+        window.show();
+    }
+
+    /**
      * Commandline.
      */
     @FXML
@@ -151,10 +166,11 @@ public class DictionaryScene extends DictionaryManagement {
 
     public String searchWord = null;
     /**
-     * Hàm trả về 1 button trong bảng chọn search list
+     * Sử dụng Google API để phát âm.
      */
     @FXML
     public void PronounceSearchWord(ActionEvent event) throws Exception {
         GooglePronounce.pronounce(searchWord);
     }
+
 }

@@ -20,4 +20,5 @@ public class DictionaryEdit {
             alert.show();
         } else DictionaryManagement.setDictionaryEdit(new Word(targetWord.getText(), newMeaning.getText()));
     }
+
 }
