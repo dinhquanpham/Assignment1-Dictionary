@@ -100,7 +100,16 @@ public class DictionaryScene extends DictionaryManagement {
         Parent root = loader.load();
         Stage window = new Stage();
         window.setScene(new Scene(root, 600, 500));
-        window.setTitle("Translate Text");
+        window.setTitle("English - Vietnamese");
+        window.show();
+    }
+    @FXML
+    public void HandleTranslateText2(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/dictionary/btl/TextTranslate2.fxml"));
+        Parent root = loader.load();
+        Stage window = new Stage();
+        window.setScene(new Scene(root, 600, 500));
+        window.setTitle("Vietnamese - English");
         window.show();
     }
 
@@ -175,5 +184,4 @@ public class DictionaryScene extends DictionaryManagement {
     public void PronounceSearchWord(ActionEvent event) throws Exception {
         GooglePronounce.pronounce(searchWord);
     }
-
 }

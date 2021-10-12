@@ -16,7 +16,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-public class TextTranslate {
+public class TextTranslate2 {
     @FXML
     private TextField targetText;
     @FXML
@@ -25,8 +25,8 @@ public class TextTranslate {
     public static String translate(String text) throws IOException {
         String urlStr = "https://script.google.com/macros/s/AKfycbwHsg9Ywpg25EwswiLFGGSCVKaN3eNr8QxsGrdDe9ofcfZIZds/exec" +
                 "?q=" + URLEncoder.encode(text, "UTF-8") +
-                "&target=" + "vi" +
-                "&source=" + "en";
+                "&target=" + "en" +
+                "&source=" + "vi";
         URL url = new URL(urlStr);
         StringBuilder response = new StringBuilder();
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -39,7 +39,7 @@ public class TextTranslate {
         in.close();
         return response.toString();
     }
-    public void PrintTranslateText (ActionEvent event) throws IOException {
+    public void PrintTranslateText2 (ActionEvent event) throws IOException {
         explainText.getChildren().clear();
         String resultText = translate(targetText.getText());
         Label label = new Label();

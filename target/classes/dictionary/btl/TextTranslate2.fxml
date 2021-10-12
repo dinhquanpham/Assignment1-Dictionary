@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dictionary.btl.TextTranslate2">
+    <children>
+        <Button layoutX="271.0" layoutY="146.0" mnemonicParsing="false" onAction="#PrintTranslateText2" text="Translate 📑" />
+        <AnchorPane layoutX="26.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        <TextField fx:id="targetText" alignment="CENTER" layoutX="34.0" layoutY="14.0" prefHeight="122.0" prefWidth="538.0" promptText="Insert Text">
+            <font>
+                <Font size="16.0" />
+            </font></TextField>
+        <VBox fx:id="explainText" layoutX="47.0" layoutY="178.0" prefHeight="200.0" prefWidth="512.0" style="-fx-background-color: e4edec;" />
+    </children>
+</AnchorPane>

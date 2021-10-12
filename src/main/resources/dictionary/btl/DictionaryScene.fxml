@@ -51,7 +51,8 @@
                 </Menu>
                   <Menu mnemonicParsing="false" text="TranslateText">
                     <items>
-                      <MenuItem mnemonicParsing="false" onAction="#HandleTranslateText" text="Translate" />
+                      <MenuItem mnemonicParsing="false" onAction="#HandleTranslateText" text="English-Vietnamese" />
+                        <MenuItem mnemonicParsing="false" onAction="#HandleTranslateText2" text="Vietnamese-English" />
                     </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="About">
