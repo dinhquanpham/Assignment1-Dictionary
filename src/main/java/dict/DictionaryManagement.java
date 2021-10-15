@@ -124,7 +124,7 @@ public class DictionaryManagement {
      */
     public static void dictionaryExportToFile() throws IOException {
         String projectAddress = System.getProperty("user.dir");
-        String dictionaryAddress = projectAddress + "\\data\\dictionaries.txt";
+        String dictionaryAddress = projectAddress + "\\data\\english-vietnamese.txt";
         FileWriter fileWriter = new FileWriter(dictionaryAddress);
         ArrayList<Word> words = dictionary.getArrayListFromTrie();
         for (Word word : words) {
